@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <title> 테스트 웹 </title>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet"
+    type="text/css"/>
+
+
+    <style>
+    
+        a:link {color:teal;}
+        a:visited {color:maroon; text-decoration: none }
+        a:hover {color:yellow; text-decoration: none }
+        a:active {color: red; text-decoration: none }
+            
+    </style>
+
+    <style>
+    img{
+        width:10%;
+        border:1px solid black;
+    }
+    </style>
+    
+    </head>
+    
+    <body>
+        <h1>제목 크기 1 입니다.</h1>
+        <h2>제목 크기 2 입니다.</h2>
+        <p>이 부분은 단락입니다.</p>
+        <p>
+        줄을 나누고 싶어서
+        이렇게 줄을 나워봤습니다
+        과연   그대로  출력이   될까요?
+
+        </p>
+        <pre>
+        줄을 나누고 싶으면
+        이렇게 pre를 이용하여
+        줄을 나누면 됩니다.
+        </pre>
+
+    <p>저는 하나의 단락입니다.</p>
+    <hr>
+    <p>저는 하나의 단락입니다.</p>
+    <hr>
+
+    <p><b>"이 부분"</b>은 단순히 글씨가 굵은 부분이에요.</p>
+    <p><strong>"이 부분"</strong>은 중요한 부분이라서 굵게 표현됐어요.</p>
+    <p><i>"이 부분"</i>은 이탤릭체로 표현했습니다.</p>
+    <p><em>"이 부분도"</em>중요해서 이탤릭체로 표현했어요.</p>
+    <p><mark>"이 부분"</mark>만 하이라이팅하고 싶어요.</p>
+
+    <p><del>"이 부분"</del>은 지운 것처럼 하고 싶어요.</p>
+    <p><ins>"밑줄 친 부분"</ins>에 들어갈 알맞은 말을 고르세요.</p>
+    <p>X<sup>2</sup> + Y<sup>3</sup> = Z</p>
+
+    <p>물을 나타내는 화학식은 H<sub>2</sub>O 입니다.</p>
+
+    <p>HTML의 정의는
+    <q>웹 페이지를 만들기 위한 하이퍼텍스트 마크업 언어</q>
+    <p>HTML의 정의</p>
+    <blockquote>
+    <q>인터넷 서비스의 하나인 월드 와이드 웹을 통해 볼 수 있는 문서를 만들 때 사용하는 프로그래밍 언어의 한 종류이다.
+    </q>
+    </blockquote>
+    입니다.</p>
+
+    <p><strong><abbr title="HyperText Markup Language 5">HTML5</abbr></strong>
+    란 웹 문서를 제작하는 데 쓰이는 프로그래밍 언어인 HTML의 최신 규격입니다.</p>
+    <address>
+        서울특별시<br>
+        강남구 테헤란로<br>
+        어디게?
+    </address>
+
+    <!-- 작성자 : 김도형-->
+    <p>이 부분은 조금 어려운 코드입니다.</p>
+    <!--
+        위와 같이 어려운 코드의 이해를 돕기 위해서 개발자가 작성하는 설명입니다.
+    -->
+    <!-- 중첩주석을 할라했는데 
+       <!-- 주석은 중첩을 할수가 
+     없습니다.--> 
+     html에선 중첩주석 안되니깐 그렇게 아세요. -->
+
+        <img src="quotes.jpg" alt="이미지가 없어요.">
+        <img src="quotes.jpg" alt=이미지가 없어요>
+
+        ><p> 태그는 두 번째로 큰 제목을 나타내는 태그입니다.</p>
+        <p>&lt;p&gt;태그는 단락을 나타내는 태그입니다.</p>
+        <p>j에 악센트가 있다는 발음 기호는 [j&#769;] 입니다.</p>
+    
+        <h1 style="background-color:maroon">
+        style 속성을 이용한 배경색 변경
+        </h1>
+
+        <h1 style="color:maroon">
+        style 속성을 이용해 마룬색 글씨 
+
+        </h1>
+    
+        <h1 style="font-size:250%">
+            style 속성을 이용한 글씨 사이즈 변경
+        </h1>
+    
+        <h1 style="text-align:center">
+            style 속성을 이용한 가운데 정렬
+        </h1>
+    
+    <h1 style="background-color:green; color:maroon; font-size:150%; text-align:center">
+        style 속성을 한번에 이용한 스타일링
+        </h1>
+    
+    <h1 style="color:blue">색상 이름으로 표현된 파란색</h1>
+
+    <h1 style="color:green">색상 이름으로 표현된 녹색</h1>
+        
+    <h1 style="color:silver">색상 이름으로 표현된 은색</h1>
+        
+    <h1 style="color:teal">색상 이름으로 표현된 청록색</h1>
+        
+    <h1 style="color:red">색상 이름으로 표현된 빨간색</h1>
+    
+    <h1 style="color:rgb(0,0,255)" RGB값으로 표현한 색상 블루>
+    </h1>
+    
+    <h1 style="color:rgb(0,128,0)" RGB값으로 표현한 색상 레드>
+    
+    </h1>
+
+    <h1 style="color:#0000FF" 색상값으로 표현된 블루>
+    
+    </h1>
+    <!--
+    <style> CSS형식으로
+    body {background-color:lightblue;}
+    h1 {background-color:rgb(255,0,180);}
+    p {background-color:#FFFFCC;}
+    
+    </style> CSS형식으로 변환하기 , 전체 다 변환되서 주석처리해놨음
+    -->
+
+    <a href="https://www.naver.com" target="_blank">
+        <h2>네이버로 이동하기</h2>
+
+
+    
+    </a>
+    
+    
+
+    <img src="C:\Users\KDHyeong\Desktop\HTML\그림1.png" alt="이미지 있어서 안뜰듯">
+
+    <a href="https://eis.cbnu.ac.kr/cbnuLogin" target="_blank">
+        <img src="C:\Users\KDHyeong\Desktop\HTML\그림2.jpg" alt="이미지 테두리"
+        style="width:120px; height:120px; border:3px solid black">
+    </a>
+
+    <!-- 이미지맵만들기 준비가 부족해서 일단 코드만 복붙하고 나중에 해봄
+	<h1>이미지 맵 만들기</h1>
+	<img src="/examples/images/img_imagemap.jpg" alt="진실혹은거짓" usemap="#vending" style="width:320px; height:240px" />
+	<map name="vending"> 
+		<area  shape="rect" coords="90,60,180,130" alt="거짓" href="https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A7%93%EB%A7%90">
+		<area  shape="rect" coords="210,200,70,130" alt="진실" href="https://ko.wikipedia.org/wiki/%EC%A7%84%EC%8B%A4">
+	</map>
+	<p>표지판을 눌러보세요!</p>
+    --> 
+
+    <p> 순서가 없는 리스트 </p>
+    <ul>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>멜론</li>
+    </ul>
+
+    <ul style="list-style-type:square"> 
+        <li>오렌지</li>
+        <li>포도</li>
+        <li>복숭아</li>
+        </ul>
+        <!-- circle square등 여러개 있음 리스트 만드는거에-->
+    
+    <p>순서가 있는 리스트</p>
+        <ol>
+            <li>사과</li>
+            <li>바나나</li>
+            <li>멜론</li>
+        </ol>
+
+        <ol style="list-style-type: upper-alpha">
+            <li>사과</li>
+            <li>바나나</li>
+            <li>멜론</li>
+        </ol>
+        <!--decimal ,  upper-alpha  , lower-alpha , upper-romen , lower-romen 등 이있음-->
+
+    <p>정의 리스트</p>
+        <dl>
+            <dt>호박</dt>
+            <dd>박과의 한해살이 덩굴성 채소</dd>
+            <dt>상추</dt>
+            <dd>국화과의 한해살이 또는 두해살이풀</dd>
+        </dl>
+
+    <table style="wodth:100%">
+    
+        <tr style="background-color:lightgray">
+            <th>고래</th>
+            <th>참치</th>
+        </tr>
+        <tr>
+            <td>상어</td>
+            <td>문어</td>
+        </tr>
+
+        <tr>
+            <td>오징어</td>
+            <td>고등어</td>
+
+        </tr>
+    
+    
+    </table>
+
+    <style>
+    
+        table, th , td {border:1px solid black}
+    
+    
+    </style>
+    <!-- 
+<style>
+
+    table, th, td { border: 1px solid black; border-collapse: collapse }
+
+</style>
+    두줄로 나오는 테이블 한줄로 합치는 코드
+    -->
+
+<!--
+    테이블 열합치기
+    <table style="width:100%">
+
+        <tr>
+    
+            <td>참치</td>
+    
+            <td colspan="2">고래</td>        
+    
+        </tr>
+    
+        <tr>
+    
+            <td>상어</td>
+    
+            <td>문어</td>        
+    
+            <td>꽁치</td>
+    
+        </tr>
+    
+    </table>
+
+    테이블 행합치기
+    <table style="width:100%">
+
+    <tr>
+
+        <td rowspan="2">상어</td>
+
+        <td>문어</td>        
+
+        <td>꽁치</td>
+
+    </tr>
+
+    <tr>
+
+        <td>고등어</td>        
+
+        <td>돌고래</td>
+
+    </tr>
+
+</table>
+
+테이블 열과 행 합치기
+<table style="width:100%">
+
+    <tr>
+
+        <td colspan="6">1</td>
+
+    </tr>
+
+    <tr>
+
+        <td colspan="6">2</td>
+
+    </tr>
+
+    <tr>
+
+        <td rowspan="3">3</td>
+
+        <td rowspan="3">4</td>
+
+        <td colspan="2">5</td>
+
+        <td>6</td>
+
+        <td>7</td>
+
+    </tr>
+
+    <tr>
+
+        <td colspan="3">8</td>
+
+        <td>9</td>
+
+    </tr>
+
+    <tr>
+
+        <td colspan="4">10</td>
+
+    </tr>
+
+</table>
+-->
+
+<table style="width:100%">
+    <caption>해양 생물</caption>
+
+    <tr>
+        <td>참치</td>
+        <td>고래</td>
+        <td>날치</td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+    </body>
+
+
+
+</html>
