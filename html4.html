@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>HTML Layouts</title>
+	<style>
+		#header {
+			background-color:lightgrey;
+			height:100px;
+		}
+		#nav {
+			background-color:#339999;
+			color:white;
+			width:200px;
+			height:300px;
+			float:left;
+		}
+		#section {
+			width:200px;
+			text-align:left;
+			float:left;
+			padding:10px;
+		}
+		#footer {
+			background-color:#FFCC00;
+			height:100px;
+			clear:both;
+		}
+		#header, #nav, #section, #footer { text-align:center; }
+		#header, #footer { line-height:100px; }
+		#nav, #section { line-height:240px; }
+	</style>
+</head>
+
+<body>
+
+	<h1>div 요소를 이용한 레이아웃</h1>
+	<div id="header">
+		<h2>HEADER 영역</h2>
+	</div>
+	<div id="nav">
+		<h2>NAV 영역</h2>
+	</div>
+	<div id="section">
+		<p>SECTION 영역</p>
+	</div>
+	<div id="footer">
+		<h2>FOOTER 영역</h2>
+	</div>
+
+
+
+
+    <h1>table 요소를 이용한 레이아웃</h1>
+	<table width="100%" style="text-align:center; border:none">
+		<tr>
+			<td colspan="2" style="background-color:lightgrey">
+				<h2>HEADER 영역</h2>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color:#339999; color:white; width:20%">
+				<h2>NAV 영역</h2>
+			</td>
+			<td style="height:200px; text-align:left">
+				<p>SECTION 영역</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="background-color:#FFCC00">
+				<h2>FOOTER 영역</h2>
+			</td>
+		</tr>
+    </table>
+    
+    <!-- 테이블은 수정이 어려우므로 div를 이용하여 만들어야 한다!-->
+</body>
+
+</html>
