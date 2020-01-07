@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang ="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Clone Wep Site</title>
+    <!-- https://getbootstrap.com/docs/4.0/examples/pricing/ 사이트 클론해보기-->
+
+
+    <style>
+        .nav { 
+            height: 70px ;
+            border-bottom: 1px solid black;
+            display: flex;
+            align-items: center;
+        }
+        .nav-right-items {
+            display: flex;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+        
+        .nav-items {
+            margin-left: 10px;
+        }
+
+
+        .title {
+            margin-top: 60px;
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+       
+        .subtitle {
+            
+            
+            font-size: 1.25rem;
+            font-weight: 300;
+            
+        }
+
+        .main {
+            width: 1000px;
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        .price-items {
+            width: 300px;
+            height: 350px;
+            border: 1px solid black;
+            margin : 20px;
+            border-radius: 4px
+            
+        }
+
+        .prices {
+            display: flex;
+            
+        }
+
+
+
+        .price-item-title {
+            font-weight: 400;
+            font-size: 1.5rem;
+            border-bottom:1px solid black ;
+            height: 53px;
+            line-height: 53px ;
+
+        }
+
+        .price-item-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            padding: 20px;
+
+
+        }
+
+        .price-item-detail {
+            margin-bottom: 20px;
+        }
+        
+        .price-item-button {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: .5rem 1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: .3rem;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            margin: 0;
+            font-family: inherit;
+            color: #007bff;
+            background-color: transparent;
+            background-image: none;
+            border-color: #007bff;
+            
+        }
+    </style>
+
+
+</head>
+
+<body>
+<div class="nav">
+    <div class="nav-items">Company name</div>
+        <div class="nav-right-items">
+
+        <div class="nav-items">Features</div>
+        <div class="nav-items">Enterprise</div>
+        <div class="nav-items">Support</div>
+        <div class="nav-items">Pricing</div>
+        <div class="nav-items">Sign up</div>
+
+        </div>
+</div>
+
+    <div class="main">
+        <div class="title">
+            Pricing
+        </div>
+        <div class="subtitle">
+            Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.
+        </div>
+    
+
+        <div class="prices">
+            <div class="price-items">
+                <div class="price-item-title">
+                Free
+                </div>
+                <div class="price-item-price">
+                    $0 / mo
+                </div>
+                <div class="price-item-detail">
+                    10 users included<br>
+                    2 GB of storage<br>
+                    Email support<br>
+                    Help center access
+                </div>
+                <button class="price-item-button">
+                    Sign up for free
+                </button>
+            </div>
+            <div class="price-items">
+                <div class="price-item-title">
+                Pro
+                </div>
+                <div class="price-item-price">
+                    $15 / mo
+                </div>
+                <div class="price-item-detail">
+                    20 users included<br>
+                    10 GB of storage<br>
+                    Priority email support<br>
+                    Help center access     
+                </div>
+                <button class="price-item-button">
+                    Get started
+                </button>
+            </div>
+            <div class="price-items">
+                <div class="price-item-title">
+                Enterprise
+                </div>
+                <div class="price-item-price">
+                    $29 / mo
+                </div>
+                <div class="price-item-detail">
+                    30 users included<br>
+                    15 GB of storage<br>
+                    Phone and email support<br>
+                    Help center access
+                </div>
+                <button class="price-item-button">
+                    Contact us
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+
+</html>
