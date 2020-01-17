@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+<meta charset="UTF-8">
+<title>CSS Pracktice4</title>
+
+<style>
+    div { 
+        background-color: red;
+        padding: 50px;
+        border: 20px solid maroon;
+        margin: 50px;
+        width: 320px;
+        height: 100px; 
+    }
+
+    div.pad {
+        padding-top: 100px;
+        padding-right: 100px;
+        padding-bottom: 100px;
+        padding-left: 100px;
+
+     }
+        /* 한번에 여러개 설정 3이나 4나 똑같다.*/
+    div.four { padding: 20px 50px 30px 50px; } 
+    div.three { padding: 20px 59px 30px; }
+
+     /* 
+    .dotted {border-style: dotted;}    점선
+
+    .dashed {border-style: dashed;}     긴 점선
+
+    .solid {border-style: solid;}      실선
+
+    .double {border-style: double;}    이중실선 
+
+    .groove {border-style: groove;}    입체적인 선
+
+    .ridge {border-style: ridge;}      능선효과가 있는선
+
+    .inset {border-style: inset;}       내지로 끼운 선
+
+    .outset {border-style: outset;}     외지로 끼운 선
+
+    .none {border-style: none;}     테두리 없애기
+
+    .hidden {border-style: hidden;}     존재하지만 표현 x
+
+    .mix {border-style: solid dashed dotted double;}
+    */
+
+    img {border: 2px solid black; width: 300px; height: 300px; }
+        .dottedA {
+			border-style: dotted;
+			border-width: 2px;
+		}
+		.dottedB {
+			border-style: dotted;
+			border-width: 5px;
+		}
+		.dashedA {
+			border-style: dashed;
+			border-width: thin;
+		}
+		.dashedB {
+			border-style: dashed;
+			border-width: thick;
+		}
+		.doubleA {
+			border-style: double;
+			border-width: 5px;
+		}
+		.doubleB {
+			border-style: double;
+			border-width: thick;
+		}
+		.mix {
+			border-style: solid;
+			border-width: 1px 2px 10px thick;
+		}
+        p {
+			border-style: solid;
+			border-width: 3px;
+		}
+		.red { border-color: red; }
+		.green { border-color: rgb(0,255,0); }
+		.blue { border-color: #0000FF; }
+		.mix { border-color: red green blue maroon; }
+		.color { color: teal; }
+        
+        h1 {
+			background-color: #7FFFD4;
+			border: 2px solid teal;
+		}
+
+        h1.mar {
+
+        margin-top: 25px;
+
+        margin-right: 10px;
+
+        margin-bottom: 30px;
+
+        margin-left: 100px;
+
+        }
+        
+</style>
+
+
+
+
+</head>
+
+<body>
+
+    <p>박스모델</p>
+    <img src="C:/Users/KDHyeong/Desktop/HTML/HTML/CSS/그림3.png">
+    <div>CSS 박스모델 입니다.
+        CSS를 이용하여 크기를 지정해 주었습니다.
+    </div>
+    <div class="pad">패딩 속성을 100px 로 설정했을경우</div>
+    
+    <h2>border-width 속성을 이용한 테두리의 두께 설정</h2>
+	<p class="dottedA">border-width 속성값을 2px로 한 단락입니다.</p>
+	<p class="dottedB">border-width 속성값을 5px로 한 단락입니다.</p>
+	<p class="dashedA">border-width 속성값을 thin으로 한 단락입니다.</p>
+	<p class="dashedB">border-width 속성값을 thick으로 한 단락입니다.</p>
+	<p class="doubleA">border-width 속성값을 5px로 한 단락입니다.</p>
+	<p class="doubleB">border-width 속성값을 thick으로 한 단락입니다.</p>
+	<p class="red">border-color 속성값을 red로 한 단락입니다.</p>
+	<p class="green">border-color 속성값을 green로 한 단락입니다.</p>
+	<p class="blue">border-color 속성값을 blue로 한 단락입니다.</p>
+	<p class="mix">테두리마다 각각의 border-color 속성값을 적용한 단락입니다.</p>
+	<p class="color">border-color 속성의 속성값을 명시하지 않은 단락입니다.</p>
+
+    <h1 class="mar">margin 속성값을 각 측면마다 별도로 지정한 요소입니다.</h1>
+    <!-- 마진이나 아웃라인이나 다 거기서 거기이므로 생략..-->
+</body>
+
+
+
+</html>
