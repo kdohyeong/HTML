@@ -6,18 +6,155 @@
 <title>
     CSS Practice5
 </title>
+<style>
 
 
 
+
+    li { display: inline; }
+
+    div { width: 100px; height: 100px; border: solid black; }
+
+    .first { background-color: aqua; }
+    .second { background-color: green; }
+    .third { background-color: yellow; }
+    
+    .inline { display: inline; }
+    .inline-block { display: inline-block; }
+    p.none { display: none; }
+	p.hidden { visibility: hidden; }
+
+    h2 { border: solid orange; }
+
+
+    img {
+        opacity: 0.4 ;
+        filter: alpha(opacity=100);
+
+    }
+
+    img:hover {
+        opacity: 1.0 ;
+        filter: alpha(opacity=40);
+    }
+    div.fixed {
+			border: 2px solid #B8860B;
+			width: 450px;
+			position: fixed;
+			top: 0;
+			right: 0;
+		}
+
+    div.relative {
+		border: 2px solid #B8860B;
+		width: 500px;
+		height: 200px;
+		position: relative;
+		} 
+	div.absolute {
+		border: 2px solid #006400;
+		width: 200px;
+		height: 100px;
+		position: absolute;
+		top: 50px;
+		right: 0;
+		}     
+
+</style>
+    
 
 </head>
 
 
 <body>
+    <ul class="circle">
+        <li><a href="https://www.naver.com">NAVER</a></li>
+        <li><a href="http://tcpschool.com">TCP SCHOOL</a></li>
+    </ul><br>
+
+
+    <h1>다양한 display 속성값</h1>
+    <p>아래에 나오는 div 요소는 모두 display 속성값이 블록입니다.</p>
+    <div class="first">블록</div>
+    <div class="second">블록</div>
+    <div class="third">블록</div>
+
+
+    <p>아래에 나오는 div 요소는 인라인</p>
+    <div class="first inline">인라인</div>
+    <div class="second inline">인라인</div>
+    <div class="third inline">인라인</div>
+
+    <p>아래에 나오는 div 요소는 모두 인라인-블록</p>
+    <div class="first inline-block">인라인-블록</div>
+    <div class="second inline-block">인라인-블록</div>
+    <div class="third inline-block">인라인-블록</div>
+
+    <p>HTML 요소 숨기기</p>
+    <h2>
+        <p>이 아래의 단락은 none</p>
+        <p class="none">이 아래의 단락은 none</p>
+    </h2>
+
+    <h2>
+        <p>이 아래의 단락은 hidden</p>
+        <p class="hidden">이 아래의 단락은 hidden</p>
+    </h2>
+
+    <img src="C:/Users/KDHyeong/Desktop/HTML/HTML/CSS/그림1.png">
+
+    <h1>고정 위치(fixed position) 지정 방식</h1>
+    
+    <div class="fixed">이 요소는 고정 위치 지정 방식으로 위치를 설정하였습니다.</div>
+    <h2>제목 1</h2>
+    
+	<p>첫 번째 단락</p>
+
+	<h2>제목 2</h2>
+	<p>두 번째 단락</p>
+
+	<h2>제목 3</h2>
+	<p>세 번째 단락</p>
+
+	<h2>제목 4</h2>
+	<p>네 번째 단락</p>
+
+	<h2>제목 5</h2>
+	<p>다섯 번째 단락</p>
+
+	<h2>제목 6</h2>
+	<p>여섯 번째 단락</p>
+
+	<h2>제목 7</h2>
+	<p>일곱 번째 단락</p>
+
+	<h2>제목 8</h2>
+	<p>여덟 번째 단락</p>
+
+	<h2>제목 9</h2>
+	<p>아홉 번째 단락</p>
+
+	<h2>제목 10</h2>
+	<p>열 번째 단락</p>
+
+	<h2>제목 11</h2>
+	<p>열한 번째 단락</p>
+
+	<h2>제목 12</h2>
+	<p>열두 번째 단락</p>
+
+	<h2>제목 13</h2>
+	<p>열세 번째 단락</p>
 
 
 
-
+    
+	<h1>절대 위치(absolute position) 지정 방식</h1>
+	<div class="relative">이 요소는 상대 위치 지정 방식으로 위치를 설정하였습니다.
+		<div class="absolute">이 요소는 절대 위치 지정 방식으로 위치를 설정한 후, top 속성값을 50px로 설정하였습니다.</div>
+	</div>
+	<div class="absolute">이 요소는 절대 위치 지정 방식으로 위치를 설정한 후, top 속성값을 50px로 설정하였습니다.</div>
+	<p>절대 위치는 해당 요소의 바로 상위의 위치가 설정된 조상(ancestor) 요소에 따라 위치를 재조정하는 방식입니다!</p>
 </body>
 
 
