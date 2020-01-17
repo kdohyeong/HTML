@@ -1,0 +1,101 @@
+<!DOCTYPE THML>
+<html lang = "ko">
+
+
+<head>
+<meta charset = "UTF-8">
+
+<title>CSS Practice3</title>
+
+<style>
+    table, th, td {border: 2px solid orange; }
+    /* table {border-collapse: collapse; } 
+    table { width: 100%; border-collapse: seperate; border-spacing: 20px 30p; }
+
+    th { text-align: left; }
+    td { text-align: center; }
+    th { vertical-align: top; height: 50px; }
+    td { vertical-align: bottom; height: 50px; }
+				*/
+	table {border-collapse: collapse; width 100%; }
+	th , td { padding:10px ; vorder-bottom: 1px solid #CD5C5C; }
+	tr:hover { background-color: #F5F5F5; }
+	tr:nth-child(odd) { background-color: #F3F3F3; }
+
+
+
+	.up, .down, .right, .left { background: url("C:/Users/KDHyeong/Desktop/HTML/HTML/그림1.png") no-repeat; }
+	.up { width: 21px; height: 20px; background-position: 0 0;}
+	.down { width: 21px; height: 20px; background-position: -21px 0; }
+	.right { width: 22px; height: 20px; background-position: -42px 0; }
+	.left{ width: 22px; height: 20px; background-position: -65px 0;}
+
+
+	#large {font-size: 200%; }
+	#small {font-size: 0.7em; }
+	#fixed {font-size: 20px; }
+
+	div { height: 200px; width: 500px; border:2px solid orange; }
+
+	div.maxWidth { max-width: 500px; }
+	div.minWidth { min-width: 500px; }
+	p { max-height: 50px; overflow: auto; }
+	p { min-height: 50px; }
+
+</style>
+
+
+
+
+    
+</head>
+
+
+<body>
+
+
+    <h1>border 속성을 이용한 테이블의 테두리 설정</h1>
+
+	<table>
+		<tr>
+			<th>참치</th>
+			<th>고래</th>		
+			<th>날치</th>
+		</tr>
+		<tr>
+			<td>상어</td>
+			<td>문어</td>		
+			<td>꽁치</td>
+		</tr>
+		<tr>
+			<td>오징어</td>
+			<td>고등어</td>		
+			<td>돌고래</td>
+		</tr>
+	</table>
+
+	<p>이미지 스프라이트</p>
+	<img src="C:/Users/KDHyeong/Desktop/HTML/HTML/그림1.png">
+	<div class="up"></div><br>
+	<div class="down"></div><br>
+	<div class="left"></div><br>
+	<div class="right"></div><br>
+
+	<p id="small">스몰 글씨</p>
+	<p id="large">라지 글씨</p>
+	<p id="fixed">글씨를 20px 로 고정</p>
+
+
+	<h1>height와 width 속성</h1>
+	<div> 이 div 요소의 높이는 200px , 너비는 500px</div>
+
+	<div class="maxWidth">이 요소는 500px 고정</div>
+	<div class="minWidth">최소값을 500으로 고정</div>
+
+	<p>최대 높이를 50px 고정 </p>
+	<p>최소 높이를 100으로 고정</p>
+</body>
+
+
+
+</html>
