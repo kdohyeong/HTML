@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        CSS PRACTICE10
+    </title>
+
+    <style>
+        a:link { color: orange; }
+        a:visited { color: gray; }
+        a:hover { color: blue; }
+        a:active { color: red; }
+
+        div{
+            background-color: orange; 
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        div:hover { 
+            background-color: blue;
+            color: white;
+        }
+
+
+        input { border: 3px solod #FFEFD5 ; 
+                transition: 0.5s ;
+                padding: 10px;
+                outline: none;
+                width: 300px; 
+              }
+
+        input:focus { border: 3px solid #CD853F; }
+
+        input:checked + span { color: #CD853F; }
+
+        span { margin-left: 5px ; }
+
+        input:disabled + span { color: #CD853F; }
+
+    </style>
+
+
+
+
+
+
+</head>
+
+
+<body>
+
+    <h1>링크 선택자를 이용한 선택</h1>
+    <p><a href="#">홈으로 가기!</a></p>
+    <div>링크 선택자를 이용한 버튼 만들기!</div>
+
+    <h2>input 요소의 스타일 설정</h2>
+    <form>
+        아래의 입력 양식을 마우스로 클릭해 보세요!<br><br>
+        <input type="text" id="email" name="email" value="마우스로 클릭해 보세요!"> <br>
+        
+
+
+        <input type="checkbox" name="lecture" value="html" checked="checked"><span>HTML</span><br>
+        <input type="checkbox" name="lecture" value="css"><span>CSS</span><br>
+        <input type="checkbox" name="lecture" value="java"><span>JAVA</span><br>
+        <input type="checkbox" name="lecture" value="cpp" disabled="disabled"><span>C++</span><br>
+    </form>
+
+
+</body>
+
+
+</html>

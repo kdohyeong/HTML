@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        CSS PRACTICE9
+    </title>
+
+    <style>
+        div { 
+            border: 3px solid black;
+            width:300px;
+            padding: 10px;
+            margin: auto;
+
+
+        }
+
+        p { 
+           border: 3px solid black;
+           width: 300px;
+           padding: 10px;
+           margin: 0;
+           /*  position: absolute; */
+           right: 0;
+
+        }
+    
+        div.right { float: right }
+        div.left { float: left }    
+
+
+
+        *{ color: red; }
+
+        h3 { color: teal; text-decoration: underline; }
+
+        #heading { color: sandybrown; text-decoration: line-through; }
+
+
+        .headings { color: deepskyblue; text-decoraion: overline; }
+
+
+
+        div { border: 3px solid orange;}
+        div p { background-color: skyblue; }  /* div 바로 밑의 p만 선택하려면 div > p 로 써야한다. */
+
+    </style>
+
+
+
+
+
+
+</head>
+
+
+<body>
+
+        <h1> margin속성을 이용한 가운데 정렬</h1>
+        <div>margin의 속성값으 auto로 하면 <br>
+        수평으로 가운데 정렬을 할 수 있다.
+        </div>
+
+
+        <p>absolute position을 사용하여<br>
+            수평으로 좌우 정렬을 할 수 있다.<br>
+
+        </p>
+
+        <div class ="right"> float 속성값으로 오른쪽 왼쪽 수평으로 좌우 정렬</div>
+        <div class ="left"> float 속성값으로 오른쪽 왼쪽 수평으로 좌우 정렬</div>
+
+
+        <h3> 이 부분에 스타일을 적용합니다.</h3>
+
+        <h4 id="heading">이 부분에 스타일을 적용합니다.</h4>
+
+        <h5 class="headings">이 부분에 스타일을 적용합니다.</h5>
+
+        <p>div 태그 외부의 p 태그는 선택되지 않습니다.</p>
+	    <div>
+            <p>div 태그 내부의 p 태그만 선택됩니다!</p>
+            <p>div 태그 내부의 p 태그만 선택됩니다!</p>
+            <p>div 태그 내부의 p 태그만 선택됩니다!</p>
+	    </div>
+	    <p>div 태그 외부의 p 태그는 선택되지 않습니다.</p>
+
+
+
+
+
+
+
+    </body>
