@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+  
+    <title>JavaScript2</title>
+
+
+
+
+</head>
+
+
+<body>
+
+    
+    <h1>같은 변수에 다른 타입의 값</h1>
+    <p id= "result"> </p>
+
+    <script>
+		var num = 20;	// 변수의 선언과 함께 초기화
+		document.getElementById("result").innerHTML = num + "<br>";
+		num = "이십";	// 문자열 대입
+		document.getElementById("result").innerHTML += num + "<br>";
+		var num;		// 한 변수를 여러 번 초기화할 수는 있으나, 재선언은 할 수 없습니다.
+		document.getElementById("result").innerHTML += num;
+	</script>
+    
+    
+    <h1>묵시적 타입 변환</h1>
+	<p id="result1"></p>
+	
+	<script>
+		var result = 10 + "문자열";	// 문자열 연결을 위해 숫자 10이 문자열로 변환됨.
+		document.getElementById("result1").innerHTML = result + "<br>";
+		result = "3" * "5";			// 곱셈 연산을 위해 두 문자열이 모두 숫자로 변환됨.
+		document.getElementById("result1").innerHTML += result + "<br>";
+		result = 1 - "문자열";		// NaN
+		document.getElementById("result1").innerHTML += result;
+	</script>
+    
+	<h1>명시적 타입 변환 함수</h1>
+	<p id="result2"></p>
+
+	<script>
+		document.getElementById("result2").innerHTML = Number("10") + "<br>";	// 10
+		document.getElementById("result2").innerHTML += String(true) + "<br>";	// "true"
+		document.getElementById("result2").innerHTML += Boolean(0) + "<br>";		// false
+		document.getElementById("result2").innerHTML += Object(3);				// new Number(3)
+	</script>
+    
+    
+    <h1>날짜를 문자열이나 숫자로 변환</h1>
+	<p id="result3"></p>
+
+	<script>
+		var result = String(Date());
+		document.getElementById("result3").innerHTML = result + "<br>";
+		result = Date().toString();
+		document.getElementById("result3").innerHTML += result + "<br>";
+		var date = new Date(); 			// Date 객체 생성
+		result = date.getFullYear();
+		document.getElementById("result3").innerHTML += result + "<br>";
+		result = date.getTime();		// 1970년 1월 1일부터 현재까지의 시간을 밀리초 단위의 숫자로 반환함.
+		document.getElementById("result3").innerHTML += result;
+	</script>
+
+
+    <h1>변수의 선언과 초기화</h1>
+    <p id="date"></p>
+
+    <script>
+        var month;
+        var date = 25;
+        month = 12;
+
+        document.getElementById("date").innerHTML =
+            "크리스마스는 " + month + "월" + date + "일 입니다.";
+    
+    
+    
+    </script>
+
+    <h1>여러 변수의 선언과 초기화</h1>
+    <p id="date1"></p>
+
+    <script>
+        var month, date;
+        var hours = 7, minutes = 15;
+        month = 10, date = 5;
+        
+        document.getElementById("date1").innerHTML = 
+            "이번 모임의 날짜는 " + month + "월 " + date + "일입니다.<br>";
+        document.getElementById("date1").innerHTML += 
+            hours + "시 " + minutes + "분까지 꼭 와주세요!";
+    </script>
+
+    <h1>같은 변수에 다른 타입의 값 할당</h1>
+    <p id="result5"></p>
+
+    <script>
+        var num = 10;		// 변수의 선언과 함께 초기화
+        document.getElementById("result5").innerHTML = num + "<br>";
+        num = [10, 20, 30];	// 배열 할당
+        document.getElementById("result5").innerHTML += num + "<br>";
+        var num; 			// 이 재선언문은 무시됨.
+        document.getElementById("result5").innerHTML += num;
+    </script>
+
+    
+	<h1>초기화하지 않은 변수의 값</h1>
+	<p id="result6"></p>
+	
+	<script>
+		var num1;	// 변수의 선언
+		document.getElementById("result6").innerHTML = num1 + "<br>";
+		num1 = 10;	// 변수의 초기화
+		document.getElementById("result6").innerHTML += num1;
+	</script>
+	
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>
