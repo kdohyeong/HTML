@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>JavaScript6</title>
+</head>
+
+
+
+<body>
+
+    
+	<h1>함수의 정의</h1>
+
+	<script>
+		// addNum라는 이름의 함수를 정의함.
+		function addNum(x, y) {		// x, y는 이 함수의 매개변수임.
+			document.write(x + y);
+		}
+		addNum(2, 3);	// addNum() 함수에 인수로 2와 3을 전달하여 호출함.
+	</script>
+    
+    
+	<h1>함수의 반환문</h1>
+
+	<script>
+		function multiNum(x, y) {
+			return x * y;			// x와 y를 곱한 결과를 반환함.
+		}
+
+		var num = multiNum(3, 4);	// multiNum() 함수가 호출된 후, 그 반환 값이 변수 num에 저장됨.
+		document.write(num + "<br>");
+
+	</script>
+
+    <script>
+    
+    
+   
+    function addNum(x, y){
+        return x + y;
+    }
+
+
+    var sum = addNum(3, 5);
+    document.write(sum);
+    </script>
+
+    <script>
+
+        function sqr(x){
+            return x * x;
+        }
+        var sqrNum = sqr;
+
+        document.write(sqrNum(4) + "<br>");
+        document.write(sqr(4));
+
+
+    </script>
+
+    <h1>지역 변수</h1>
+
+    <script>
+        function localNum() {
+            var num = 10;	// 지역 변수 num에 숫자 10을 할당함.
+            document.write("함수 내부에서 변수 num의 타입은 " + typeof num + "입니다.<br>");
+        }
+        localNum();			// 함수 localNum()을 호출함.
+        document.write("함수의 호출이 끝난 뒤 변수 num의 타입은 " + typeof num + "입니다.");
+    </script>
+
+
+
+    <h1>전역 변수</h1>
+
+    <script>
+        var num = 10;	// 전역 변수 num을 선언함.
+        function globalNum() {
+            document.write("함수 내부에서 변수 num의 값은 " + num + "입니다.<br>");
+            num = 20;	// 전역 변수 num의 값을 함수 내부에서 변경함.
+        }
+        globalNum();	// 함수 globalNum()을 호출함.
+        document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + "입니다.");
+    </script>
+
+    <h1>자동으로 선언되는 전역 변수</h1>
+
+    <script>
+        function globalNum() {
+            num = 10;	// var 키워드를 사용하지 않고 변수 num을 선언함.
+            document.write("함수 내부에서 변수 num의 값은 " + num + "입니다.<br>");
+        }
+        globalNum();	// 함수 globalNum()을 호출함.
+        document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + "입니다.");
+    </script>
+
+    <h1>같은 이름의 전역 변수와 지역 변수</h1>
+
+    <script>
+        var num = 10;		// 전역 변수 num을 선언함.
+        function globalNum() {
+            var num = 20;	// 같은 이름의 지역 변수 num을 선언함.
+            document.write("함수 내부에서 변수 num의 값은 " + num + "입니다.<br>");
+        }
+        globalNum();		// 함수 globalNum()을 호출함.
+        document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + "입니다.");
+    </script>
+
+    <h1>같은 이름의 전역 변수와 지역 변수</h1>
+
+    <script>
+        var num = 10;		// 전역 변수 num을 선언함.
+        function globalNum() {
+            var num = 20;	// 같은 이름의 지역 변수 num을 선언함.
+            document.write("함수 내부에서 지역 변수 num의 값은 " + num + "입니다.<br>");
+            document.write("함수 내부에서 전역 변수 num의 값은 " + window.num + "입니다.<br>");
+        }
+        globalNum();		// 함수 globalNum()을 호출함.
+    </script>
+
+    <h1>함수의 유효 범위</h1>
+
+    <script>
+        // x, y를 전역 변수로 선언함.
+        var x = 10, y = 20;
+
+        // sub()를 전역 함수로 선언함.
+        function sub() {
+            return x - y;		// 전역 변수인 x, y에 접근함.
+        }
+        document.write("전역 함수에서 x - y의 값은 " + sub() + "입니다.<br>");
+
+        // parentFunc()을 전역 함수로 선언함.
+        function parentFunc() {
+            var x = 1, y = 2;	// 전역 변수와 같은 이름으로 선언하여 전역 변수의 범위를 제한함.
+
+            function add() {	// add() 함수는 내부 함수로 선언됨.
+                return x + y;	// 전역 변수가 아닌 지역 변수 x, y에 접근함.
+            }
+            return add();
+        }
+        document.write("내부 함수에서 x + y의 값은 " + parentFunc() + "입니다.<br>");
+    </script>
+
+    
+	<h1>함수의 호출 : 적은 수의 인수</h1>
+
+	<script>
+		function addNum(x, y, z) {
+			if(x === undefined)	// 함수 호출시 x에 해당하는 인수가 전달되지 않은 경우
+				x = 0;			// 변수 x의 값을 undefined에서 0으로 변경함.
+			if(y === undefined) // 함수 호출시 y에 해당하는 인수가 전달되지 않은 경우
+				y = 0;			// 변수 y의 값을 undefined에서 0으로 변경함.
+			if(z === undefined) // 함수 호출시 z에 해당하는 인수가 전달되지 않은 경우
+				z = 0;			// 변수 z의 값을 undefined에서 0으로 변경함.
+			return x + y + z;
+		}
+		document.write("인수가 3개 모두 전달되면 반환값은 " + addNum(1, 2, 3) + "입니다.<br>");
+		document.write("인수가 2개만 전달되면 반환값은 " + addNum(1, 2) + "입니다.<br>");
+		document.write("인수가 1개만 전달되면 반환값은 " + addNum(1) + "입니다.<br>");
+		document.write("인수가 아무것도 전달되지 않으면 반환값은 " + addNum() + "입니다.");
+	</script>
+
+    
+	<h1>arguments 객체</h1>
+
+	<script>
+		function addNum() {
+			var sum = 0;	// 합을 저장할 변수 sum을 선언함.
+			for(var i = 0; i < arguments.length; i++) {	// 전달받은 인수의 총 수만큼 반복함.
+				sum += arguments[i];					// 각각의 인수를 sum에 더함.
+			}
+			return sum;
+		}
+		document.write("인수가 3개 전달되면 반환값은 " + addNum(1, 2, 3) + "입니다.<br>");
+		document.write("인수가 2개 전달되면 반환값은 " + addNum(1, 2) + "입니다.<br>");
+		document.write("인수가 1개 전달되면 반환값은 " + addNum(1) + "입니다.<br>");
+		document.write("인수가 아무것도 전달되지 않으면 반환값은 " + addNum() + "입니다.<br>");
+		document.write("인수가 10개나 전달되도 반환값은 " + addNum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) + "로 잘 동작합니다!!");
+	</script>
+    
+    
+    <h1>디폴트 매개변수</h1>
+
+	<script>
+		function mul(a, b) {
+			// 인수가 한 개만 전달되었을 때 나머지 매개변수의 값을 undefined 값이 아닌 1로 설정함.
+			b = (typeof b !== 'undefined')  ? b : 1;
+			return a * b;
+		}
+		document.write("인수가 2개 전달되면 반환값은 " + mul(3, 4) + "입니다.<br>");
+		document.write("인수가 1개만 전달되면 반환값은 " + mul(3) + "입니다.<br>");
+    </script>
+    
+    
+	<h1>디폴트 매개변수</h1>
+
+	<script>
+		function mul(a, b = 1) { // 인수가 한 개만 전달되면 나머지 매개변수의 값을 언제나 1로 설정해 줌.
+			return a * b;
+		}
+		document.write("인수가 2개 전달되면 반환값은 " + mul(3, 4) + "입니다.<br>");
+		document.write("인수가 1개만 전달되면 반환값은 " + mul(3) + "입니다.");
+	</script>
+
+
+    
+	<h1>나머지 매개변수</h1>
+
+	<script>
+		function sub() {
+			var firstNum = arguments[0];	// 첫 번째 인수에서
+			for(var i = 0; i < arguments.length-1; i++) { // 두 번째부터 마지막 인수까지를
+				firstNum -= arguments[i+1];	// 뺌.
+			}
+			return firstNum;
+		}
+		document.write(sub(10, 2, 3) + "<br>");	// 10 - 2 - 3 = 5
+		document.write(sub(10, 1, 5, 8));		// 10 - 1 - 5 - 8 = -4
+    </script>
+    
+
+    
+	<h1>나머지 매개변수</h1>
+
+	<script>
+		// 첫 번째 인수를 변수 firstNum에 저장하고 나머지 인수들은 배열 restArgs에 저장함.
+		function sub(firstNum, ...restArgs) {
+			for(var i = 0; i < restArgs.length; i++) {
+				firstNum -= restArgs[i];
+			}
+			return firstNum;
+		}
+		document.write(sub(10, 2, 3) + "<br>");	// 10 - 2 - 3 = 5
+		document.write(sub(10, 1, 5, 8));		// 10 - 1 - 5 - 8 = -4
+    </script>
+    
+
+    
+	<h1>eval() 함수</h1>
+
+	<script>
+		var x = 10, y = 20;
+		var a = eval("x + y");
+		var b = eval("y * 3");
+		document.write(a + "<br>" + b);
+    </script>
+    
+
+    
+	<h1>isFinite() 함수</h1>
+
+	<script>
+		document.write(isFinite(123) + "<br>");
+		document.write(isFinite(123e100) + "<br>");
+		document.write(isFinite(0) + "<br>");
+		document.write(isFinite(true) + "<br>");
+		document.write(isFinite(false) + "<br>");
+		document.write(isFinite(null) + "<br>");
+		document.write(isFinite("123") + "<br>");
+		document.write(isFinite("") + "<br>");
+		document.write(isFinite("문자열") + "<br>");
+		document.write(isFinite(undefined) + "<br>");
+		document.write(isFinite(NaN));
+    </script>
+    
+    
+	<h1>isNaN() 함수</h1>
+
+	<script>
+		document.write(isNaN(123) + "<br>");
+		document.write(isNaN(123e100) + "<br>");
+		document.write(isNaN(0) + "<br>");
+		document.write(isNaN(true) + "<br>");
+		document.write(isNaN(false) + "<br>");
+		document.write(isNaN(null) + "<br>");
+		document.write(isNaN("123") + "<br>");
+		document.write(isNaN("") + "<br>");
+		document.write(isNaN("문자열") + "<br>");
+		document.write(isNaN(undefined) + "<br>");
+		document.write(isNaN(NaN));
+    </script>
+    
+
+    <h1>parseFloat() 함수</h1>
+
+	<script>
+		document.write(parseFloat("123") + "<br>");
+		document.write(parseFloat("123.000") + "<br>");
+		document.write(parseFloat("123.456") + "<br>");
+		document.write(parseFloat("12 34 56") + "<br>");
+		document.write(parseFloat("  123  ") + "<br>");
+		document.write(parseFloat("123 초콜릿") + "<br>");
+		document.write(parseFloat("초콜릿 123"));
+	</script>
+    
+    <h1>parseInt() 함수</h1>
+
+	<script>
+		document.write(parseInt("123") + "<br>");
+		document.write(parseInt("123.000") + "<br>");
+		document.write(parseInt("123.456") + "<br>");
+		document.write(parseInt("12 34 56") + "<br>");
+		document.write(parseInt("  123  ") + "<br>");
+		document.write(parseInt("123 초콜릿") + "<br>");
+		document.write(parseInt("초콜릿 123") + "<br><br>");
+
+		document.write(parseInt("10", 10) + "<br>");
+		document.write(parseInt("10", 8) + "<br>");
+		document.write(parseInt("10", 16) + "<br>");
+		document.write(parseInt("0x10"));
+	</script>
+	
+
+    
+	<h1>encodeURI()와 encodeURIComponent() 함수</h1>
+
+	<script>
+		var uri = "http://google.com/search.php?name=홍길동&city=서울";
+		var enc1 = encodeURI(uri);
+		var enc2 = encodeURIComponent(uri);
+		document.write(enc1 + "<br>" + enc2);
+	</script>
+    
+    <h1>decodeURI()와 decodeURIComponent() 함수</h1>
+
+	<script>
+		var uri = "http://google.com/search.php?name=홍길동&city=서울";
+		var enc1 = encodeURI(uri);
+		var enc2 = encodeURIComponent(uri);
+		document.write(enc1 + "<br>" + enc2 + "<br><br>");
+
+		var dec1 = decodeURI(enc1);
+		var dec2 = decodeURIComponent(enc2);
+		document.write(dec1 + "<br>" + dec2);
+    </script>
+    
+
+    <h1>escape()와 unescape() 함수</h1>
+
+	<script>
+		var str = "Hello!	World ?#$";
+		var esc = escape(str);
+		var une = unescape(esc);
+		document.write(esc + "<br>" + une);
+    </script>
+    
+
+    
+	<h1>Number() 함수</h1>
+
+	<script>
+		document.write(Number("123") + "<br>");
+		document.write(Number("123.000") + "<br>");
+		document.write(Number("123.456") + "<br>");
+		document.write(Number("12 34 56") + "<br>");
+		document.write(Number("123 초콜릿") + "<br><br>");
+		
+		document.write(Number(true) + "<br>");
+		document.write(Number(false) + "<br>");
+		document.write(Number(new Date()) + "<br>");
+		document.write(Number(null));
+    </script>
+    
+    <h1>String() 함수</h1>
+
+	<script>
+		document.write(String(123) + "<br>");
+		document.write(String(123.456) + "<br>");
+		document.write(String("123") + "<br>");
+		document.write(String(new Date()) + "<br>");
+		document.write(String(null) + "<br><br>");
+
+		document.write(String(true) + "<br>");
+		document.write(String(false) + "<br>");
+		document.write(String(Boolean(1)) + "<br>");
+		document.write(String(Boolean(0)));
+	</script>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
