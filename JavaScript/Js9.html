@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>JavaScript9</title>
+</head>
+
+<body>
+
+    
+	<h1>Math.min() 메소드</h1>
+
+	<script>
+		document.write(Math.min() + "<br>");								// Infinity
+		document.write(Math.min(1, 10, -100, -10, 1000, 0) + "<br>");		// -100
+		document.write(Math.min(1, 10, -100, -10, "-1000", 0) + "<br>");	// -1000
+		document.write(Math.min(1, 10, -100, -10, "문자열", 0));			// NaN
+	</script>
+	
+
+    
+	<h1>Math.max() 메소드</h1>
+
+	<script>
+		document.write(Math.max() + "<br>");								// -Infinity
+		document.write(Math.max(1, 10, -100, -10, 100, 0) + "<br>");		// 100
+		document.write(Math.max(1, 10, -100, -10, "1000", 0) + "<br>");		// 1000
+		document.write(Math.max(1, 10, -100, -10, "문자열", 0));			// NaN
+    </script>
+    
+    
+	<h1>Math.random() 메소드</h1>
+
+	<p>결과보기를 다시 누를 때마다 다른 랜덤 숫자가 생성됩니다.</p>
+	<script>
+		var min = 10, max = 20;
+		document.write(Math.random() + "<br>");				// [0, 1)
+		document.write(Math.random() * (max - min) + min);	// [min, max)
+	</script>
+    
+    
+    
+	<h1>Math.round() 메소드</h1>
+
+	<script>
+		document.write(Math.round(10.49) + "<br>");		// 10
+		document.write(Math.round(10.5) + "<br>");		// 11
+		document.write(Math.round(-10.5) + "<br>");		// -10
+		document.write(Math.round(-10.51));				// -11
+    </script>
+    
+    <h1>Math.floor() 메소드</h1>
+
+	<script>
+		document.write(Math.floor(10.95) + "<br>");		// 10
+		document.write(Math.floor(11.01) + "<br>");		// 11
+		document.write(Math.floor(-10.95) + "<br>");	// -11
+		document.write(Math.floor(-11.01));				// -12
+    </script>
+    
+    
+	<h1>Math.ceil() 메소드</h1>
+
+	<script>
+		document.write(Math.ceil(10.95) + "<br>");		// 11
+		document.write(Math.ceil(11.01) + "<br>");		// 12
+		document.write(Math.ceil(11) + "<br>");			// 11
+		document.write(Math.ceil(-10.95) + "<br>");		// -10
+		document.write(Math.ceil(-11.01));				// -11
+	</script>
+
+
+    
+	<h1>Math.sin() 메소드</h1>
+
+	<script>
+		document.write(Math.sin(0) + "<br>");	// 0
+		document.write(Math.sin(Math.PI / 2));	// 1
+    </script>
+    
+    
+	<h1>ISO 날짜 양식</h1>
+
+	<script>
+		document.write(new Date("1977-12-14T13:30:00") + "<br>");	// 날짜와 시간까지 표현함.
+		document.write(new Date("1977-12-14") + "<br>");			// 시간이 생략되면 자동으로 09:00:00으로 설정됨.
+		document.write(new Date("1977-12") + "<br>");				// 일이 생략되면 자동으로 1일로 설정됨.
+		document.write(new Date("1977"));							// 월이 생략되면 자동으로 1월로 설정됨.
+	</script>
+    
+    
+	<h1>Long 날짜 양식</h1>
+
+	<script>
+		document.write(new Date("Feb 19 1982") + "<br>");		// MMM DD YYYY
+		document.write(new Date("19 Feb 1982") + "<br>");		// DD MMM YYYY
+		document.write(new Date("February 19 1982") + "<br>");	// 월의 축약형 뿐만 아니라 전체 단어도 인식함.
+		document.write(new Date("FEBRUARY, 19, 1982"));			// 쉼표는 무시되며, 대소문자의 구분은 없음.
+    </script>
+    
+    
+	<h1>Short 날짜 양식</h1>
+
+	<script>
+		document.write(new Date("02/19/1982") + "<br>");	// MM/DD/YYYY
+		document.write(new Date("1982/02/19"));				// YYYY/MM/DD
+    </script>
+    
+    
+	<h1>Full 날짜 양식</h1>
+
+	<script>
+		document.write(new Date("Wed May 25 2016 17:00:00 GMT+0900 (Seoul Time)") + "<br>");
+		// GMT가 현재 국가와 다른 시간은 현재 국가의 GMT로 변환되어 표현됨.
+		document.write(new Date("Wed May 25 2016 17:00:00 GMT-0500 (New York Time)"));
+    </script>
+    
+    
+	<h1>Date.now() 메소드</h1>
+
+	<script>
+		var nowMiliSec = Date.now();
+		document.write(nowMiliSec + "<br>");			// 1970년 1월 1일 00:00:00부터 현재까지의 밀리초
+		document.write(new Date(nowMiliSec) + "<br>");	// new Date()와 같은 결과를 반환함.
+		document.write(new Date());
+    </script>
+    
+
+    
+	<h1>getFullYear() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		document.write("올해는 " + date.getFullYear() + "년입니다.");	// 현재 연도를 반환함.
+    </script>
+    
+    
+	<h1>getDate() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		document.write("오늘은 " + date.getMonth() + "월 " + date.getDate() + "일입니다.");	// 현재 날짜를 반환함.
+	</script>
+	
+	
+	<h1>getDay() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		var day;
+		switch (date.getDay()) {	// 현재 요일을 반환함.
+			case 0:
+				day = "일";
+				break;
+			case 1:
+				day = "월";
+				break;
+			case 2:
+				day = "화";
+				break;
+			case 3:
+				day = "수";
+				break;
+			case 4:
+				day = "목";
+				break;
+			case 5:
+				day = "금";
+				break;
+			case 6:
+				day = "토";
+				break;
+		}
+		document.write("오늘은 " + day + "요일입니다.");
+	</script>
+    
+    <h1>getDay() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		var days = ["일", "월", "화", "수", "목", "금", "토"];
+		document.write("오늘은 " + days[date.getDay()] + "요일입니다.");
+    </script>
+    
+
+    
+	<h1>getTime() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		var period = date.getTime() / 86400000 // 하루는 86,400,000 밀리초로 계산됨.
+		document.write("1970년 1월 1일부터 오늘까지 " + period.toFixed() + "일이 지났습니다."); // 소수 부분은 생략함.
+	</script>
+    
+    <h1>setFullYear() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		date.setFullYear(1982, 1, 19);	// 자바스크립트에서 2월은 1임.
+		document.write(date.getFullYear() + "<br>");	// 1982
+		document.write(date.getMonth() + "<br>");		// 1
+		document.write(date.getDate() + "<br>");		// 19
+		document.write(date);
+	</script>
+    
+
+    <h1>setDate() 메소드</h1>
+
+	<script>
+		var date = new Date();
+		date.setDate(10);				// Date 객체의 일자 값을 10일로 설정함.
+		document.write(date + "<br>");
+		date.setDate(40);				// 40일을 설정하면, 초과되는 일수만큼 다음달로 넘어감.
+		document.write(date);
+    </script>
+    
+
+    <h1>문자열의 길이</h1>
+
+	<script>
+		var strKor = "한글";
+		var strEng = "abcABC";
+		document.write(strKor.length + "<br>");	// 2
+		document.write(strEng.length);			// 6
+	</script>
+
+
+    <h1>이스케이프 시퀀스</h1>
+
+    <script>
+        // 16진수 이스케이프 시퀀스로 \x 다음은 16진수 수로 인식됨.
+        document.write('\xA2' + "<br>");
+        // 유니코드 이스케이프 시퀀스로 \u 다음은 유니코드로 인식됨.
+        document.write('\u00A2' + "<br>");
+        // ECMAScript 6부터 새롭게 추가된 유니코드 코드 포인트 이스케이프 방식임.
+        document.write(String.fromCodePoint(0x00A2) + "<br>");
+    </script>
+
+    <h1>긴 문자열 리터럴 나누어 표현하기</h1>
+
+    <p>이렇게 줄이 나뉜 문자열은 코드 내에서만 표현되며, 웹 페이지에서는 기존과 같이 하나의 문자열로 표현됩니다.</p>
+    <script>
+        document.write("이 문자열은 아주 긴 문자열입니다. \
+            따라서 몇 번에 걸친 줄 나누기가 필요합니다. \
+            자바스크립트에서는 역슬래시와 문자 결합 연산자를 이용하여 줄을 나눌 수 있습니다.<br>");
+        document.write("이 문자열은 아주 긴 문자열입니다." + 
+            " 따라서 몇 번에 걸친 줄 나누기가 필요합니다." + 
+            " 자바스크립트에서는 역슬래시와 문자 결합 연산자를 이용하여 줄을 나눌 수 있습니다.");
+    </script>
+
+
+    <h1>String 객체</h1>
+
+    <script>
+        var str = "JavaScript";
+        var strObj = new String("JavaScript");
+
+        document.write(str + "<br>");				// "JavaScript"
+        document.write(strObj + "<br>");			// "JavaScript"
+        document.write(typeof str + "<br>");		// string
+        document.write(typeof strObj + "<br>");		// object
+        document.write((str == strObj) + "<br>");	// 문자열 값이 같으므로, true를 반환함.
+        document.write((str === strObj));			// 문자열 값은 같지만 타입이 다르므로, false를 반환함.
+    </script>
+
+    
+	<h1>문자열에서의 위치 찾기</h1>
+
+	<script>
+		var str = "abcDEFabc";
+
+		document.write(str.indexOf('abc') + "<br>");		// 0
+		document.write(str.indexOf('abcd') + "<br>");		// -1
+		document.write(str.indexOf('abc', 3) + "<br><br>");	// 6
+
+		document.write(str.lastIndexOf('abc') + "<br>");	// 6
+		document.write(str.lastIndexOf('d') + "<br>");		// -1
+		document.write(str.lastIndexOf('c'));				// 8
+	</script>
+	
+
+    <h1>문자열에서 지정된 위치에 있는 문자 반환</h1>
+
+	<script>
+		var str = "abcDEFabc";
+
+		document.write(str.charAt(0) + "<br>");			// a
+		document.write(str.charAt(10) + "<br>");		// 빈 문자열
+		document.write(str.charCodeAt(0) + "<br>");		// 97
+		document.write(str.codePointAt(0));				// 97
+	</script>
+    
+    <h1>문자열 추출</h1>
+
+	<script>
+		var str = "abcDEFabc";
+
+		document.write(str.slice(2, 6) + "<br>");		// cDEF
+		document.write(str.slice(-4, -2) + "<br>");		// Fa
+		document.write(str.slice(2) + "<br>");			// cDEFabc
+
+		document.write(str.substring(2, 6) + "<br>");	// cDEF
+		document.write(str.substr(2, 4));				// cDEF
+	</script>
+    
+    <h1>문자열 추출</h1>
+
+	<script>
+		var str = "자바스크립트는 너무 멋져요! 그리고 유용해요.";
+
+		document.write(str.split() + "<br>");		// 구분자를 명시하지 않으면 아무런 동작도 하지 않음.
+		document.write(str.split("") + "<br>");		// 한 문자("")씩 나눔.
+		document.write(str.split(" ") + "<br>");	// 띄어쓰기(" ")를 기준으로 나눔.
+		document.write(str.split("!"));				// 느낌표("!"")를 기준으로 나눔.
+	</script>
+	
+
+
+    
+	<h1>문자열 결합</h1>
+
+	<script>
+		var str = "자바스크립트";
+
+		document.write(str + "<br>");
+		document.write(str.concat("는 너무 멋져요!") + "<br>");
+		document.write(str.concat("는 너무 멋져요!", " 그리고 유용해요!" + "<br>"));
+		document.write(str);
+    </script>
+    
+
+    <h1>문자열의 대소문자 변환</h1>
+
+	<script>
+		var str = "JavaScript";
+
+		document.write(str.toUpperCase() + "<br>"); // JAVASCRIPT
+		document.write(str.toLowerCase()); 			// javacript
+	</script>
+    
+    <h1>문자열 주위의 공백 제거</h1>
+
+	<script>
+		var str = "      JavaScript	";
+
+		document.write(str.trim());
+    </script>
+    
+
+    
+	<h1>Array.isArray() 메소드</h1>
+
+	<script>
+		document.write(Array.isArray([]) + "<br>");					// true
+		document.write(Array.isArray(new Array()) + "<br><br>");	// true
+
+		document.write(Array.isArray(123) + "<br>");				// false
+		document.write(Array.isArray("Array") + "<br>");			// false
+		document.write(Array.isArray(true));						// false
+    </script>
+
+
+    <h1>Array.from() 메소드</h1>
+
+	<script>
+		function arrayFrom() {
+			return Array.from(arguments);
+		}
+		document.write(Array.from(arrayFrom(1, 2, 3)) + "<br>");	// [1, 2, 3]
+
+		var myMap = new Map([[1, 2], [3, 4]]);
+		document.write(Array.from(myMap) + "<br>");					// [1, 2, 3, 4]
+
+		document.write(Array.from("JavaScript"));					// [J,a,v,a,S,c,r,i,p,t]
+	</script>
+	
+    <h1>Array.of() 메소드</h1>
+
+	<script>
+		document.write(new Array(10) + "<br>");		// 10개의 배열 요소를 가지는 빈 배열을 생성함.
+		document.write(Array.of(10));				// 한 개(숫자 10)의 배열 요소를 가지는 배열을 생성함.
+	</script>
+	
+
+
+</body>
+</html>
