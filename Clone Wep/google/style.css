@@ -1,0 +1,43 @@
+h1 {
+    text-align: center ;
+    margin-top: 150px ;
+    font-size: 90px ;
+
+}
+
+
+h1 span:nth-child(1) {
+    color: blue
+
+}
+h1 span:nth-child(2) {
+    color: red
+
+}
+h1 span:nth-child(3) {
+    color: orange
+
+}
+h1 span:nth-child(4) {
+    color: green
+
+}
+h1 span:nth-child(5) {
+    color: skyblue
+
+}
+
+
+.right-items {
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.items {
+    margin-left: 10px;
+}
+
+.searchbar {
+    width: 500px
+}
