@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript12</title>
+    
+
+</head>
+
+
+
+
+<body>
+    
+    <h1 id="heading">nodeType</h1>
+    <p id="head"></p>
+    <p id="document"></p>
+
+    <script>
+    // 아이디가 "heading"인 요소의 첫 번째 자식 노드의 타입을 선택함.
+    var headingType = document.getElementsById("heading").firstChild.nodeType;
+
+    document.getElementById("head").innerHTML = headingType;
+    document.getElementById("document").innerHTML = document.nodeType;
+
+
+    
+    </script>
+
+    
+	<h1>빈 텍스트 노드의 처리</h1>
+	<div id="parentNode">
+		<p><span>첫 번째 단락</span> 입니다.</p>
+		<p>두 번째 단락 입니다.</p>
+	</div>
+	<button onclick="printLastChild()">마지막 자식 노드 찾기!</button>
+	<p id="nodename"></p>
+	
+	<script>
+		var lastNode;
+		function findLastChild(parentNode) {
+			lastNode = parentNode.lastChild;
+			while (lastNode.nodeType != 1) {
+				lastNode = lastNode.previousSibling;
+			}
+		}
+		function printLastChild() {
+			var parentNode = document.getElementById("parentNode");
+			findLastChild(parentNode);
+			document.getElementById("nodename").innerHTML = lastNode.nodeName;
+		}
+    </script>
+    
+    <h1>노드 리스트</h1>
+	<ul id="list">
+		<li>첫 번째 아이템이에요!</li>
+		<li>두 번째 아이템이에요!</li>
+		<li>세 번째 아이템이에요!</li>
+	</ul>
+
+	<script>
+		// 아이디가 "list"인 요소의 모든 자식 노드들을 선택함.
+		var listItems = document.getElementById("list").childNodes;
+		// 자식 노드들 중 첫 번째 li 요소의 내용을 변경함.
+		listItems[1].firstChild.nodeValue = "HTML 요소의 내용을 변경했어요!";
+	</script>
+	
+
+   <!-- 위의 예제에서 자식 노드 중 첫 번째 <li>요소를 선택할 때 인덱스로 0이 아닌 1을 사용합니다.
+
+        그 이유는 HTML DOM에서 각 요소 노드 다음에는 별도의 텍스트 노드가 존재하기 때문입니다.
+        
+        따라서 아이디가 "list"인 요소의 자식 노드 리스트의 첫 번째 노드에는 아이디가 "list"인 요소 다음에 존재하는 텍스트 노드가 저장됩니다.
+        
+         
+        
+        다음 예제는 이러한 요소 노드 사이에 존재하는 텍스트 노드를 확인하는 예제입니다. -->
+
+
+    
+	<h1>노드 리스트의 텍스트 노드</h1>
+	<ul id="list">ul 요소 다음의 텍스트
+		<li>첫 번째 아이템이에요!</li>첫 번째 li 요소 다음의 텍스트
+		<li>두 번째 아이템이에요!</li>두 번째 li 요소 다음의 텍스트
+		<li>세 번째 아이템이에요!</li>세 번째 li 요소 다음의 텍스트
+	</ul>
+
+	<script>
+		// 아이디가 "list"인 요소의 모든 자식 노드들을 선택함.
+		var listItems = document.getElementById("list").childNodes;
+		// 자식 노드들 중 첫 번째 노드의 값을 출력함.
+		document.write(listItems[0].nodeValue + "<br>");
+		// 자식 노드들 중 두 번째 노드의 자식 노드 중 첫 번째 노드의 값을 출력함.
+		document.write(listItems[1].firstChild.nodeValue + "<br>");
+		// 자식 노드들 중 세 번째 노드의 값을 출력함.
+		document.write(listItems[2].nodeValue);
+	</script>
+
+
+    <h1>노드 리스트의 length 속성</h1>
+    <ul id="list">
+        <li>첫 번째 아이템이에요!</li>
+        <li>두 번째 아이템이에요!</li>
+        <li>세 번째 아이템이에요!</li>
+    </ul>
+    <p id="text"></p>
+    <button onclick="changeTextColor()">글자색 변경!</button>
+
+    <script>
+        var listItems = document.getElementsByTagName("li");	// 모든 <li> 요소들을 선택함.
+        document.getElementById("text").innerHTML = 
+            "이 노드 리스트의 길이는 " + listItems.length + "개 입니다.<br>";	// 모든 자식 노드들의 개수를 반환함.
+
+        function changeTextColor() {
+            for (var i = 0; i < listItems.length; i++) {
+            listItems[i].style.color = "orange";	// 모든 자식 노드들의 글자색을 변경함.
+            }
+        }
+    </script>
+
+
+    
+	<h1>appendChild() 메소드</h1>
+	<h2 id="item">JavaScript</h2>
+	<div id="list">
+		<p>HTML</p>
+		<p>CSS</p>
+		<p>JQuery</p>
+	</div>
+	<button onclick="appendNode()">노드 추가!</button>
+	
+	<script>
+		function appendNode() {
+			var parent = document.getElementById("list");	// 아이디가 "list"인 요소를 선택함.
+			var newItem = document.getElementById("item");	// 아이디가 "item"인 요소를 선택함.
+			parent.appendChild(newItem);					// 해당 요소의 맨 마지막 자식 노드로 추가함.
+		}
+    </script>
+    
+
+    <h1>insertBefore() 메소드</h1>
+	<h2 id="item">JavaScript</h2>
+	<div id="list">
+		<p>HTML</p>
+		<p id="criteria">CSS</p>
+		<p>JQuery</p>
+	</div>
+	<button onclick="appendNode()">노드 추가!</button>
+	
+	<script>
+		function appendNode() {
+			var parent = document.getElementById("list");			// 아이디가 "list"인 요소를 선택함.
+			var criteriaItem = document.getElementById("criteria");	// 아이디가 "criteria"인 요소를 선택함.
+			var newItem = document.getElementById("item");			// 아이디가 "item"인 요소를 선택함.
+			parent.insertBefore(newItem, criteriaItem);				// 해당 노드를 기준이 되는 자식 노드의 바로 앞에 추가함.
+		}
+    </script>
+    
+    
+	<h1>insertData() 메소드</h1>
+	<p id="text">지금 시간은 오후 3시입니다.</p>
+	<button onclick="appendText()">텍스트 추가!</button>
+
+	<script>
+		var text = document.getElementById("text").firstChild;	// 아이디가 "text"인 요소의 텍스트 노드를 선택함.
+		function appendText() {
+			text.insertData(6, " 나른한 ");	// 텍스트 노드의 6번째 문자부터 " 나른한 "이란 텍스트를 추가함.
+		}
+    </script>
+    
+    <h1>insertData() 메소드</h1>
+	<p id="text">지금 시간은 오후 3시입니다.</p>
+	<button onclick="appendText()">텍스트 추가!</button>
+
+	<script>
+		var text = document.getElementById("text").firstChild;	// 아이디가 "text"인 요소의 텍스트 노드를 선택함.
+		function appendText() {
+			text.insertData(6, " 나른한 ");	// 텍스트 노드의 6번째 문자부터 " 나른한 "이란 텍스트를 추가함.
+		}
+    </script>
+    
+    
+	<h1>요소 노드의 생성</h1>
+	<p id="text">새로운 단락을 생성하여 이 단락 앞에 추가할 것입니다.</p>
+	<button onclick="createNode()">요소 노드 생성!</button>
+
+	<script>
+		function createNode() {
+			var criteriaNode = document.getElementById("text");	// 기준이 되는 요소로 아이디가 "text"인 요소를 선택함.
+			var newNode = document.createElement("p");			// 새로운 <p> 요소를 생성함.
+			newNode.innerHTML = "새로운 단락입니다.";
+			document.body.insertBefore(newNode, criteriaNode);	// 새로운 요소를 기준이 되는 요소 바로 앞에 추가함.
+		}
+    </script>
+    
+
+    <h1>속성 노드의 생성</h1>
+	<p id="text">이 단락에 새로운 속성을 추가할 것입니다.</p>
+	<button onclick="createNode()">속성 노드 생성!</button>
+
+	<script>
+		function createNode() {
+			var text = document.getElementById("text");				// 아이디가 "text"인 요소를 선택함.
+			var newAttribute = document.createAttribute("style");	// 새로운 style 속성 노드를 생성함.
+			newAttribute.value = "color:red";
+			text.setAttributeNode(newAttribute);					// 해당 요소의 속성 노드로 추가함.
+		}
+    </script>
+    
+
+    <h1>텍스트 노드의 생성</h1>
+	<button onclick="createNode()">텍스트 노드 생성!</button>
+	<p id="text"></p>
+
+	<script>
+		function createNode() {
+			var elementNode = document.getElementById("text");				// 아이디가 "text"인 요소를 선택함.
+			var newText = document.createTextNode("새로운 텍스트에요! ");	// 새로운 텍스트 노드를 생성함.
+			elementNode.appendChild(newText);								// 해당 요소의 자식 노드로 추가함.
+		}
+	</script>
+    
+    
+
+    <h1>removeChild() 메소드</h1>
+	<button onclick="remove()">요소 노드 삭제!</button>
+	<div id="list">
+		<p>HTML</p>
+		<p id="item">CSS</p>
+		<p>JavaScript</p>
+	</div>
+	
+	<script>
+		function remove() {
+			var parent = document.getElementById("list");		// 아이디가 "list"인 요소를 선택함.
+			var removedItem = document.getElementById("item");	// 아이디가 "item"인 요소를 선택함.
+			parent.removeChild(removedItem);					// 지정된 요소를 삭제함.
+		}
+    </script>
+    
+
+    <h1>removeAttribute() 메소드</h1>
+	<button onclick="remove()">속성 노드 삭제!</button>
+	<p id="text" style="color:red; background-color:lemonchiffon;">이 단락의 속성이 제거될 것입니다.</p>
+
+	<script>
+		function remove() {
+			var text = document.getElementById("text");		// 아이디가 "text"인 요소를 선택함.
+			text.removeAttribute("style");					// 해당 요소의 "style" 속성을 제거함.
+		}
+	</script>
+	
+	
+    <h1>cloneNode() 메소드</h1>
+	<button onclick="cloneElement()">노드 복제!</button>
+	<h2 id="item">JavaScript</h2>
+	<div id="list">
+		<p>HTML</p>
+		<p>CSS</p>
+		<p>JQuery</p>
+	</div>
+		
+	<script>
+		function cloneElement() {
+			var parent = document.getElementById("list");			// 아이디가 "list"인 요소를 선택함.
+			var originItem = document.getElementById("item");		// 아이디가 "item"인 요소를 선택함.
+			parent.appendChild(originItem.cloneNode(true));			// 해당 노드를 복제하여 리스트의 맨 마지막에 추가함.
+		}
+	</script>
+	
+	
+</body>
+
+
+
+
+
+
+</html>
